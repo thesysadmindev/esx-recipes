@@ -72,13 +72,10 @@ tasks:
 
   - action: download_file
     path: ./tmp/files/oxmysql.zip
-    url: https://github.com/thesysadmindev/oxmysql/archive/refs/tags/v2.13.0.zip
+    url: https://github.com/overextended/oxmysql/releases/latest/download/oxmysql.zip
   - action: unzip
-    dest: ./tmp
+    dest: ./resources/[standalone]
     src: ./tmp/files/oxmysql.zip
-  - action: move_path
-    src: ./tmp/oxmysql-2.13.0
-    dest: ./resources/[standalone]/oxmysql
 
   ## Cleanup
   - action: remove_path
