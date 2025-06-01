@@ -36,11 +36,11 @@ tasks:
     path: ./tmp/files/esx_core.zip
     url: https://github.com/thesysadmindev/esx_core/archive/refs/tags/1.10.10.zip
   - action: unzip
-    dest: ./tmp/core
+    dest: ./tmp
     src: ./tmp/files/esx_core.zip
 
   - action: query_database
-    file: ./tmp/core/[SQL]/legacy.sql
+    file: ./tmp/esx_core-1.10.10/[SQL]/legacy.sql
 
   - action: download_github
     src: https://github.com/thesysadmindev/ESX-Legacy-Addons
@@ -48,7 +48,7 @@ tasks:
     dest: ./tmp/addons
 
   - action: move_path
-    src: ./tmp/core/[core]
+    src: ./tmp/esx_core-1.10.10/[core]
     dest: ./resources/[core]
 
   - action: move_path
@@ -64,20 +64,20 @@ tasks:
     path: ./tmp/files/pma-voice.zip
     url: https://github.com/thesysadmindev/pma-voice/archive/refs/tags/v6.6.2.zip
   - action: unzip
-    dest: ./tmp/pma-voice
+    dest: ./tmp
     src: ./tmp/files/pma-voice.zip
   - action: move_path
-    src: ./tmp/pma-voice/pma-voice-6.6.2
+    src: ./tmp/pma-voice-6.6.2
     dest: ./resources/[standalone]/pma-voice
 
   - action: download_file
     path: ./tmp/files/oxmysql.zip
     url: https://github.com/thesysadmindev/oxmysql/archive/refs/tags/v2.13.0.zip
   - action: unzip
-    dest: ./tmp/oxmysql
+    dest: ./tmp
     src: ./tmp/files/oxmysql.zip
   - action: move_path
-    src: ./tmp/oxmysql/oxmysql-2.13.0
+    src: ./tmp/oxmysql-2.13.0
     dest: ./resources/[standalone]/oxmysql
 
   ## Cleanup
